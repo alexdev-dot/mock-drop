@@ -6,6 +6,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/alexdev-dot/mock-drop?style=social)](https://github.com/alexdev-dot/mock-drop/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/alexdev-dot/mock-drop)](https://github.com/alexdev-dot/mock-drop/issues)
 
+**GitHub Topics:** `frontend` `mock-api` `rest-api` `cli-tool` `nodejs` `json-server` `development` `testing` `mock-server` `express`
+
 ---
 
 **mock-drop** is a zero-configuration CLI tool that instantly transforms any local JSON file into a fully functional REST API server on `localhost`.
@@ -20,6 +22,8 @@ Designed for frontend developers who need to prototype interfaces without waitin
 - 🔗 **Universal**: Language-agnostic - use with any tech stack
 - 📦 **Lightweight**: Minimal dependencies, fast to install
 - 🔄 **Auto-reload**: Changes to your JSON file reflect instantly
+
+**If you find mock-drop helpful, please ⭐️ star it on [GitHub](https://github.com/alexdev-dot/mock-drop)!**
 
 [View on GitHub](https://github.com/alexdev-dot/mock-drop) | [Report Issues](https://github.com/alexdev-dot/mock-drop/issues)
 
