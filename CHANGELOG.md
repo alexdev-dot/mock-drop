@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Enabled request logger middleware in the middleware chain for better request debugging
+- Configured NPM_TOKEN for automated npm publishing
 
 ## [1.5.0] - 2026-11-03
 
