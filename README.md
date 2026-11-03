@@ -1,8 +1,8 @@
 # mock-drop 💧
 
-[![npm version](https://badge.fury.io/js/mock-drop.svg)](https://www.npmjs.com/package/mock-drop)
+[![npm version](https://badge.fury.io/js/%40alex_developer%2Fmock-drop.svg)](https://www.npmjs.com/package/@alex_developer/mock-drop)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js Version](https://img.shields.io/node/v/mock-drop.svg)](https://nodejs.org)
+[![Node.js Version](https://img.shields.io/node/v/%40alex_developer%2Fmock-drop.svg)](https://nodejs.org)
 
 ---
 
@@ -32,6 +32,8 @@ Designed for frontend developers who need to prototype interfaces without waitin
 - **Auto-Reloading** – Watch your JSON file for changes; updates are live instantly without restarting the server.
 - **Custom Ports** – Avoid port conflicts easily using the `--port` flag.
 - **Lightweight** – Minimal dependencies for fast installation and execution.
+- **Full CRUD Support** – GET, POST, PUT, and DELETE endpoints with in-memory persistence.
+- **CORS Enabled** – Access your API from any origin or port.
 
 ---
 
@@ -47,7 +49,7 @@ Designed for frontend developers who need to prototype interfaces without waitin
 Install globally via npm:
 
 ```bash
-npm install -g mock-drop
+npm install -g @alex_developer/mock-drop
 ```
 
 Verify the installation:
@@ -146,7 +148,15 @@ Given the example `db.json` above, the following endpoints are automatically gen
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/users` | Retrieve all users |
+| `GET` | `/users/:id` | Retrieve a specific user by ID |
+| `POST` | `/users` | Create a new user (auto-increments ID) |
+| `PUT` | `/users/:id` | Update a user by ID |
+| `DELETE` | `/users/:id` | Delete a user by ID |
 | `GET` | `/posts` | Retrieve all posts |
+| `GET` | `/posts/:id` | Retrieve a specific post by ID |
+| `POST` | `/posts` | Create a new post (auto-increments ID) |
+| `PUT` | `/posts/:id` | Update a post by ID |
+| `DELETE` | `/posts/:id` | Delete a post by ID |
 
 All endpoints return JSON responses based on your data structure.
 
@@ -180,7 +190,9 @@ Contributions are welcome! Whether you want to fix a bug, improve documentation,
 
 Looking for a place to start? Check out these planned features:
 
-- [ ] Support for `POST`, `PUT`, and `DELETE` requests (in-memory persistence)
+- [x] Support for `POST`, `PUT`, and `DELETE` requests (in-memory persistence)
+- [x] CORS support for cross-origin requests
+- [x] Basic test suite with Jest and Supertest
 - [ ] Add a delay flag (`--delay 500`) to simulate slow networks
 - [ ] Generate fake data automatically for empty endpoints
 - [ ] Support for nested routes and query parameters
@@ -200,7 +212,13 @@ Looking for a place to start? Check out these planned features:
    npm link
    ```
 
-4. Run tests or launch your local build against a test file
+4. Run tests:
+
+   ```bash
+   npm test
+   ```
+
+5. Launch your local build against a test file
 
 ### Pull Request Guidelines
 
