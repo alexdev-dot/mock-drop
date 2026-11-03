@@ -57,6 +57,7 @@ Designed for frontend developers who need to prototype interfaces without waitin
 - **Lightweight** – Minimal dependencies for fast installation and execution.
 - **Full CRUD Support** – GET, POST, PUT, and DELETE endpoints with in-memory persistence.
 - **CORS Enabled** – Access your API from any origin or port.
+- **Request Logging** – Automatic logging of HTTP requests with method, URL, status, and duration for debugging.
 - **Modular Architecture** – Clean, maintainable codebase with separation of concerns.
 
 ---

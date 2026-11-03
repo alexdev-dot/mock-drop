@@ -23,6 +23,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhanced CONTRIBUTING.md with contributor guidelines and communication channels
 - Improved GitHub workflow with coverage reporting
 
+### Fixed
+- Enabled request logger middleware in the middleware chain for better request debugging
+
 ## [1.5.0] - 2026-11-03
 
 ### Added

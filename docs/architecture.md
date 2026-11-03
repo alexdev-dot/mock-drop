@@ -131,13 +131,14 @@ mock-drop/
 **Middleware Types:**
 1. **CORS** (`cors.js`): Enables cross-origin requests
 2. **Delay** (`delay.js`): Simulates network latency
-3. **Error Handler** (`error-handler.js`): Centralized error handling
-4. **Request Logger** (`request-logger.js`): Logs HTTP requests (optional)
+3. **Request Logger** (`request-logger.js`): Logs HTTP requests with method, URL, status, and duration
+4. **Error Handler** (`error-handler.js`): Centralized error handling
 
 **Design Decisions:**
 - Each middleware is a factory function for configurability
 - Error handler placed at end of middleware chain
 - CORS applied to all routes by default
+- Request logger provides visibility into HTTP requests for debugging
 
 ### Utils (`src/utils/`)
 
