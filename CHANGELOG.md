@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2026-11-03
+
+### Added
+- Modular architecture with separation of concerns (cli, server, routes, middleware, utils)
+- Comprehensive documentation (Getting Started, Configuration, API Reference, Architecture)
+- Contributing guidelines with development setup instructions
+- GitHub issue templates (bug report, feature request, question)
+- ecommerce.json example file
+- Enhanced test suite with CLI and utility function tests
+- DataStore class for centralized data management
+- Request logger middleware (optional)
+
+### Changed
+- Refactored monolithic server.js into focused, single-responsibility modules
+- Extracted CLI logic into dedicated cli/ module
+- Separated route handlers by type (collection, resource, nested)
+- Created reusable middleware with factory pattern
+- Updated package.json entry point to src/index.js
+- Improved error handling throughout the codebase
+- Updated CLI output with styled logging
+- All existing functionality preserved and tested
+
+### Fixed
+- Added *.tgz to .gitignore to exclude build artifacts
+- Removed old lib/ directory after successful migration
+
 ## [1.4.0] - 2025-11-03
 
 ### Added
@@ -32,5 +58,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GET endpoints for all resources
 - Basic filtering support
 
+[1.5.0]: https://github.com/alexdev-dot/mock-drop/releases/tag/v1.5.0
 [1.4.0]: https://github.com/alexdev-dot/mock-drop/releases/tag/v1.4.0
 [1.0.0]: https://github.com/alexdev-dot/mock-drop/releases/tag/v1.0.0

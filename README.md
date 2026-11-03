@@ -56,6 +56,7 @@ Designed for frontend developers who need to prototype interfaces without waitin
 - **Lightweight** – Minimal dependencies for fast installation and execution.
 - **Full CRUD Support** – GET, POST, PUT, and DELETE endpoints with in-memory persistence.
 - **CORS Enabled** – Access your API from any origin or port.
+- **Modular Architecture** – Clean, maintainable codebase with separation of concerns.
 
 ---
 
@@ -210,12 +211,14 @@ mock-drop db.json
 **Expected Output:**
 
 ```text
-✓ mock-drop is running!
- Watching db.json for updates...
+✅ Successfully loaded data from db.json
+
+💧 mock-drop is running!
+ℹ️  Watching db.json for updates...
 
 Endpoints available:
-➜ http://localhost:3000/users
-➜ http://localhost:3000/posts
+👉 http://localhost:3000/users (GET, POST, PUT, DELETE)
+👉 http://localhost:3000/posts (GET, POST, PUT, DELETE)
 
 Press Ctrl+C to stop.
 ```
@@ -490,6 +493,7 @@ Looking for a place to start? Check out these planned features:
 - [x] Add a delay flag (`--delay 500`) to simulate slow networks
 - [x] Support for query parameter filtering
 - [x] Support for nested routes
+- [x] Modular architecture with separation of concerns
 - [ ] Generate fake data automatically for empty endpoints
 
 ### Development Setup
