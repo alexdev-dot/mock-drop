@@ -1,0 +1,16 @@
+{
+  "users": [
+    { "id": 1, "name": "Alice", "email": "alice@example.com", "age": 28 },
+    { "id": 2, "name": "Bob", "email": "bob@example.com", "age": 32 },
+    { "id": 3, "name": "Charlie", "email": "charlie@example.com", "age": 25 }
+  ],
+  "posts": [
+    { "id": 1, "title": "Getting Started with mock-drop", "authorId": 1, "published": true },
+    { "id": 2, "title": "Advanced JSON Structuring", "authorId": 2, "published": true },
+    { "id": 3, "title": "Draft Post", "authorId": 1, "published": false }
+  ],
+  "comments": [
+    { "id": 1, "postId": 1, "text": "Great tutorial!", "author": "Bob" },
+    { "id": 2, "postId": 1, "text": "Very helpful, thanks!", "author": "Charlie" }
+  ]
+}

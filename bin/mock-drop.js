@@ -19,13 +19,14 @@ Arguments:
 
 Options:
   --port <number>        Specify the port number (default: 3000)
+  --delay <milliseconds> Add artificial delay to all responses (default: 0)
   --help                 Display help information
   --version              Display version number
 
 Examples:
   mock-drop db.json
   mock-drop db.json --port 8080
-  mock-drop data.json --port 4000
+  mock-drop data.json --port 4000 --delay 500
 `);
 }
 
@@ -53,12 +54,20 @@ function main() {
   const portIndex = args.indexOf('--port');
   const port = portIndex !== -1 && args[portIndex + 1] ? parseInt(args[portIndex + 1], 10) : 3000;
 
+  const delayIndex = args.indexOf('--delay');
+  const delay = delayIndex !== -1 && args[delayIndex + 1] ? parseInt(args[delayIndex + 1], 10) : 0;
+
   if (isNaN(port) || port < 1 || port > 65535) {
     console.error('Error: Invalid port number');
     process.exit(1);
   }
 
-  startServer(jsonFilePath, port);
+  if (isNaN(delay) || delay < 0) {
+    console.error('Error: Invalid delay value');
+    process.exit(1);
+  }
+
+  startServer(jsonFilePath, port, delay);
 }
 
 main();
