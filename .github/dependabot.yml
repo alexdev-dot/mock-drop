@@ -1,0 +1,42 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    # Automatically group minor and patch updates
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+    # Ignore major version updates that require manual review
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    # Labels for Dependabot PRs
+    labels:
+      - "dependencies"
+      - "dependabot"
+    # Allow maintainers to approve Dependabot PRs automatically
+    reviewers:
+      - "alexdev-dot"
+    assignees:
+      - "alexdev-dot"
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    labels:
+      - "github-actions"
+      - "dependabot"
+    reviewers:
+      - "alexdev-dot"

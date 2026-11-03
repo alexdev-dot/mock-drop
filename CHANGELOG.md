@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- SECURITY.md for vulnerability reporting and security best practices
+- Dependabot configuration for automated dependency updates
+- Test coverage reporting with Codecov integration
+- GitHub labels configuration for better issue tracking
+- Enhanced issue templates (bug report, feature request, question, documentation)
+- Contributor onboarding section in CONTRIBUTING.md
+- Code coverage script (npm run test:coverage)
+- Jest configuration with coverage thresholds
+
+### Changed
+- Fixed Code of Conduct contact method placeholder
+- Updated README to include Security section
+- Enhanced CONTRIBUTING.md with contributor guidelines and communication channels
+- Improved GitHub workflow with coverage reporting
+
 ## [1.5.0] - 2026-11-03
 
 ### Added

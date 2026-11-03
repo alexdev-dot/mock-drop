@@ -39,6 +39,7 @@ Designed for frontend developers who need to prototype interfaces without waitin
 - [Documentation](#documentation)
 - [Configuration](#configuration)
 - [FAQ](#faq)
+- [Security](#security)
 - [Changelog](#changelog)
 - [Contributing](#contributing)
 - [License](#license)
@@ -468,6 +469,14 @@ Yes! You can run multiple instances on different ports:
 mock-drop users.json --port 3000
 mock-drop posts.json --port 3001
 ```
+
+---
+
+## Security
+
+For security policies, vulnerability reporting, and best practices, please see our [Security Policy](SECURITY.md).
+
+If you discover a security vulnerability, please read our security policy for responsible disclosure guidelines.
 
 ---
 

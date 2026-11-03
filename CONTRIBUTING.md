@@ -6,6 +6,53 @@ Thank you for your interest in contributing to mock-drop! This document provides
 
 Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
+## Getting Started
+
+New to open source? Welcome! We're excited to have you. Here's how to get started:
+
+### For First-Time Contributors
+
+1. **Read this document** - It contains everything you need to know
+2. **Check existing issues** - Look for issues labeled `good first issue`
+3. **Ask questions** - If you're unsure about anything, open an issue with the `question` label
+4. **Start small** - Begin with documentation updates or simple bug fixes
+
+### Finding Issues to Work On
+
+- **Good First Issues**: Look for issues labeled [`good first issue`](https://github.com/alexdev-dot/mock-drop/labels/good%20first%20issue) - these are perfect for newcomers
+- **Help Wanted**: Issues labeled [`help wanted`](https://github.com/alexdev-dot/mock-drop/labels/help%20wanted) need community help
+- **Feature Requests**: Check [`enhancement`](https://github.com/alexdev-dot/mock-drop/labels/enhancement) labeled issues for new features
+- **Bug Reports**: Help fix issues labeled [`bug`](https://github.com/alexdev-dot/mock-drop/labels/bug)
+
+### Claiming an Issue
+
+Before you start working on an issue:
+1. Comment on the issue to let us know you're working on it
+2. We'll assign the issue to you
+3. If you don't make progress within 7 days, we may reassign it
+
+### Contribution Ideas
+
+Looking for something to work on? Here are some ideas:
+
+**Beginner-Friendly:**
+- Improve documentation or add examples
+- Fix typos or grammar errors
+- Add more test cases
+- Create additional example JSON files
+
+**Intermediate:**
+- Implement a new feature from the roadmap
+- Fix a reported bug
+- Improve error messages
+- Add performance optimizations
+
+**Advanced:**
+- Refactor code for better maintainability
+- Add TypeScript definitions
+- Create a plugin system
+- Implement persistent storage options
+
 ## How to Contribute
 
 ### Reporting Bugs
@@ -86,22 +133,41 @@ git checkout -b fix/your-bugfix-name
 
 2. Make your changes
 
-3. Run tests:
+3. Run tests locally:
 ```bash
 npm test
 ```
 
-4. Commit your changes with a clear message:
+4. Check test coverage:
 ```bash
-git commit -m "Add feature: description of changes"
+npm run test:coverage
 ```
 
-5. Push to your fork:
+5. Test your changes manually:
+```bash
+npm link
+mock-drop examples/basic.json
+```
+
+6. Commit your changes with a clear message:
+```bash
+git commit -m "Add: feature description"
+```
+
+7. Push to your fork:
 ```bash
 git push origin feature/your-feature-name
 ```
 
-6. Create a pull request
+8. Create a pull request
+
+### Best Practices
+
+- **Keep PRs focused**: One PR should address one issue or feature
+- **Write descriptive commit messages**: Follow the commit message guidelines
+- **Update tests**: Ensure test coverage doesn't decrease
+- **Document changes**: Update README, docs, or comments as needed
+- **Be responsive**: Address review feedback promptly
 
 ## Coding Standards
 
@@ -125,7 +191,37 @@ git push origin feature/your-feature-name
 - Write tests for new features
 - Ensure existing tests still pass
 - Test edge cases
-- Maintain test coverage
+- Maintain test coverage (aim for 70%+)
+- Use descriptive test names
+- Follow the existing test structure
+
+### Test Structure
+
+Tests are organized in the `test/` directory:
+- `test/cli.test.js` - CLI argument parsing and validation
+- `test/server.test.js` - Server startup and endpoint handling
+- `test/utils.test.js` - Utility function tests
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+### Test Guidelines
+
+- **Unit tests**: Test individual functions and modules
+- **Integration tests**: Test interactions between components
+- **API tests**: Use Supertest to test HTTP endpoints
+- **Coverage**: Maintain at least 70% code coverage
+- **Edge cases**: Test error conditions, empty inputs, null values
 
 ### Documentation
 
@@ -139,16 +235,37 @@ git push origin feature/your-feature-name
 ```
 mock-drop/
 ├── src/
-│ ├── cli/          # Command-line interface
-│ ├── server/       # Server management
-│ ├── routes/       # Route handlers
-│ ├── middleware/   # Express middleware
-│ └── utils/        # Utility functions
-├── test/           # Test files
-├── examples/       # Example JSON files
-├── docs/           # Documentation
-└── bin/            # CLI executable
+│ ├── cli/          # Command-line interface (argument parsing, validation)
+│ ├── server/       # Server management (Express setup, DataStore)
+│ ├── routes/       # Route handlers (collection, resource, nested)
+│ ├── middleware/   # Express middleware (CORS, logging, error handling)
+│ └── utils/        # Utility functions (file operations, helpers)
+├── test/           # Test files (Jest + Supertest)
+├── examples/       # Example JSON files for testing
+├── docs/           # Documentation (getting-started, configuration, API)
+├── bin/            # CLI executable entry point
+└── .github/        # GitHub configuration (workflows, issue templates)
 ```
+
+### Key Components
+
+- **cli/**: Handles command-line argument parsing and validation
+- **server/**: Manages Express server lifecycle and DataStore
+- **routes/**: Defines RESTful route handlers for different resource types
+- **middleware/**: Provides reusable Express middleware functions
+- **utils/**: Contains helper functions for file operations and data manipulation
+
+### Architecture Overview
+
+The project follows a modular architecture with clear separation of concerns:
+
+1. **CLI Layer** (`src/cli/`) - Parses command-line arguments
+2. **Server Layer** (`src/server/`) - Manages Express server and data storage
+3. **Route Layer** (`src/routes/`) - Handles HTTP requests and responses
+4. **Middleware Layer** (`src/middleware/`) - Cross-cutting concerns (CORS, logging)
+5. **Utility Layer** (`src/utils/`) - Reusable helper functions
+
+For detailed architecture information, see [docs/architecture.md](docs/architecture.md).
 
 ## Commit Message Guidelines
 
@@ -178,6 +295,23 @@ Examples:
 - Follow the code style guidelines
 - Add tests for new functionality
 - Check for spelling and grammar errors
+- Rebase your branch on the latest main
+
+### Code Review Process
+
+1. **Automated Checks**: CI will run tests and coverage checks
+2. **Peer Review**: At least one maintainer will review your PR
+3. **Feedback**: Address review comments in a timely manner
+4. **Approval**: Once approved, a maintainer will merge
+
+### What Reviewers Look For
+
+- Code follows project conventions
+- Tests are comprehensive and pass
+- Documentation is updated
+- No breaking changes (or they're documented)
+- Performance considerations addressed
+- Security implications considered
 
 ### Pull Request Template
 
@@ -208,6 +342,41 @@ Releases are managed by maintainers:
 3. Create a git tag
 4. Publish to npm
 5. Create GitHub release
+
+## Communication
+
+### Where to Ask Questions
+
+- **GitHub Issues**: Use the `question` label for general questions
+- **Discussions**: Join our GitHub Discussions for community conversations
+- **Pull Requests**: Use PR comments for code-specific questions
+
+### Reporting Security Issues
+
+**Do NOT** open a public issue for security vulnerabilities. Instead:
+- Email: security@mock-drop.dev
+- Or use GitHub's private vulnerability reporting feature
+- See [SECURITY.md](SECURITY.md) for details
+
+## Recognition
+
+We value all contributions! Contributors will be:
+- Listed in the project's contributors section
+- Mentioned in release notes for significant contributions
+- Recognized in the annual project update
+
+## Additional Resources
+
+- [Project Roadmap](README.md#roadmap) - See what we're planning
+- [Documentation](docs/) - Detailed project documentation
+- [Architecture](docs/architecture.md) - Understand the codebase structure
+- [Security Policy](SECURITY.md) - Security guidelines and reporting
+
+## Staying Informed
+
+- **Watch the repository** to get notified of new releases and discussions
+- **Join discussions** to participate in community conversations
+- **Follow the changelog** to stay updated on new features
 
 ## Getting Help
 
