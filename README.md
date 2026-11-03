@@ -162,7 +162,7 @@ using (var client = new HttpClient())
 
 ## Prerequisites
 
-- **Node.js** v14.0.0 or higher
+- **Node.js** v18.0.0 or higher
 - **npm** v6.0.0 or higher
 
 ---
