@@ -36,6 +36,7 @@ Designed for frontend developers who need to prototype interfaces without waitin
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Examples](#examples)
+- [Documentation](#documentation)
 - [Configuration](#configuration)
 - [FAQ](#faq)
 - [Changelog](#changelog)
@@ -395,6 +396,7 @@ Check out the [examples directory](examples/) for sample JSON files:
 
 - [basic.json](examples/basic.json) - Simple flat structure with users, posts, and comments
 - [nested.json](examples/nested.json) - Nested structure demonstrating user relationships
+- [ecommerce.json](examples/ecommerce.json) - E-commerce example with products, customers, and orders
 
 Run with an example:
 ```bash
@@ -403,9 +405,22 @@ mock-drop examples/basic.json
 
 ---
 
+## Documentation
+
+For detailed documentation, see:
+
+- [Getting Started](docs/getting-started.md) - Installation and quick start guide
+- [Configuration](docs/configuration.md) - Configuration options and best practices
+- [API Reference](docs/api-reference.md) - Complete API endpoint documentation
+- [Architecture](docs/architecture.md) - Internal architecture and design patterns
+
+---
+
 ## Configuration
 
-### JSON File Structure
+For detailed configuration options, see the [Configuration documentation](docs/configuration.md).
+
+### Quick Configuration
 
 Your JSON file should use an object format where each key represents an endpoint:
 
@@ -416,8 +431,6 @@ Your JSON file should use an object format where each key represents an endpoint
   ]
 }
 ```
-
-### File Watching
 
 The server automatically watches your JSON file for changes. When you modify the file, the API endpoints update instantly without requiring a server restart.
 
@@ -500,7 +513,13 @@ Looking for a place to start? Check out these planned features:
    npm test
    ```
 
-5. Launch your local build against a test file
+5. Launch your local build against a test file:
+
+   ```bash
+   mock-drop examples/basic.json
+   ```
+
+For detailed development guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Pull Request Guidelines
 

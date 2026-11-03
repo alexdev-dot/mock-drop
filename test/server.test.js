@@ -1,5 +1,5 @@
 const request = require('supertest');
-const { startServer } = require('../lib/server');
+const { startServer } = require('../src/server');
 const fs = require('fs');
 const path = require('path');
 

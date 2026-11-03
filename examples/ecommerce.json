@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "price": 99.99,
+      "category": "Electronics",
+      "inStock": true,
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "name": "Running Shoes",
+      "price": 79.99,
+      "category": "Sports",
+      "inStock": true,
+      "rating": 4.2
+    },
+    {
+      "id": 3,
+      "name": "Coffee Maker",
+      "price": 49.99,
+      "category": "Home",
+      "inStock": false,
+      "rating": 4.8
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "address": "123 Main St",
+      "orders": [
+        { "id": 101, "productId": 1, "quantity": 1, "total": 99.99, "status": "delivered" },
+        { "id": 102, "productId": 2, "quantity": 2, "total": 159.98, "status": "shipped" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "address": "456 Oak Ave",
+      "orders": [
+        { "id": 103, "productId": 3, "quantity": 1, "total": 49.99, "status": "pending" }
+      ]
+    }
+  ],
+  "categories": [
+    { "id": 1, "name": "Electronics", "description": "Electronic devices and accessories" },
+    { "id": 2, "name": "Sports", "description": "Sports equipment and apparel" },
+    { "id": 3, "name": "Home", "description": "Home and kitchen appliances" }
+  ]
+}

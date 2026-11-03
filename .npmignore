@@ -7,3 +7,4 @@ TOOL_FEATURES.md
 test/
 jest.config.js
 coverage/
+lib/

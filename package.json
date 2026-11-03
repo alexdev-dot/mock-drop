@@ -2,7 +2,7 @@
   "name": "@alex_developer/mock-drop",
   "version": "1.4.0",
   "description": "A zero-config CLI tool that turns any local JSON file into a REST API server",
-  "main": "lib/server.js",
+  "main": "src/index.js",
   "bin": {
     "mock-drop": "bin/mock-drop.js"
   },
