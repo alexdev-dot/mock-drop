@@ -1,3 +1,11 @@
+<div align="center">
+  <img src="assets/mock-drop-banner.png"
+       alt="mock-drop - JSON to REST API CLI Tool"
+       width="100%" />
+</div>
+
+<br/>
+
 # mock-drop
 
 [![npm version](https://badge.fury.io/js/%40alex_developer%2Fmock-drop.svg)](https://www.npmjs.com/package/@alex_developer/mock-drop)
