@@ -1,4 +1,4 @@
-# mock-drop 💧
+# mock-drop
 
 [![npm version](https://badge.fury.io/js/%40alex_developer%2Fmock-drop.svg)](https://www.npmjs.com/package/@alex_developer/mock-drop)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -14,10 +14,10 @@ Designed for frontend developers who need to prototype interfaces without waitin
 
 ## Why mock-drop?
 
-- 🚀 **Speed**: Get a REST API running in seconds
+- ⚡ **Speed**: Get a REST API running in seconds
 - 🎯 **Simplicity**: No configuration files, no databases, no setup
-- 🔧 **Flexibility**: Works with any JSON structure
-- 🌐 **Universal**: Language-agnostic - use with any tech stack
+- �️ **Flexibility**: Works with any JSON structure
+- 🔗 **Universal**: Language-agnostic - use with any tech stack
 - 📦 **Lightweight**: Minimal dependencies, fast to install
 - 🔄 **Auto-reload**: Changes to your JSON file reflect instantly
 
@@ -139,15 +139,15 @@ using (var client = new HttpClient())
 
 | Feature | mock-drop | json-server |
 |---------|-----------|-------------|
-| Zero Configuration | ✅ True | ⚠️ Requires CLI arguments |
-| Auto-Reloading | ✅ Built-in | ✅ Built-in |
-| Query Filtering | ✅ Full support | ✅ Full support |
-| Nested Routes | ✅ Supported | ⚠️ Limited |
-| Custom Ports | ✅ Simple flag | ✅ Available |
-| Response Delay | ✅ Built-in flag | ❌ Requires middleware |
-| CORS | ✅ Enabled by default | ✅ Available |
-| Package Size | ✅ Lightweight | ⚠️ Larger |
-| Learning Curve | ✅ Minimal | ⚠️ Moderate |
+| Zero Configuration | ✓ True | ± Requires CLI arguments |
+| Auto-Reloading | ✓ Built-in | ✓ Built-in |
+| Query Filtering | ✓ Full support | ✓ Full support |
+| Nested Routes | ✓ Supported | ± Limited |
+| Custom Ports | ✓ Simple flag | ✓ Available |
+| Response Delay | ✓ Built-in flag | ✗ Requires middleware |
+| CORS | ✓ Enabled by default | ✓ Available |
+| Package Size | ✓ Lightweight | ± Larger |
+| Learning Curve | ✓ Minimal | ± Moderate |
 
 **Why choose mock-drop?**
 - Simpler, more intuitive command-line interface
@@ -209,12 +209,12 @@ mock-drop db.json
 **Expected Output:**
 
 ```text
-💧 mock-drop is running!
-📅 Watching db.json for updates...
+✓ mock-drop is running!
+ Watching db.json for updates...
 
 Endpoints available:
-👉 http://localhost:3000/users
-👉 http://localhost:3000/posts
+➜ http://localhost:3000/users
+➜ http://localhost:3000/posts
 
 Press Ctrl+C to stop.
 ```
