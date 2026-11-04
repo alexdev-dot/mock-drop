@@ -1,7 +1,7 @@
 const { loadJsonFile } = require('../utils/json-loader');
 const { createFileWatcher } = require('../utils/file-watcher');
 const { DataStore } = require('../utils/data-store');
-const { logSuccess, logError, logMessage, logInfo } = require('../utils/logger');
+const { logSuccess, logError, logMessage, logInfo, symbols } = require('../utils/logger');
 const { createServer } = require('./create-server');
 
 class ServerManager {
@@ -48,7 +48,7 @@ class ServerManager {
   }
 
   printStartupInfo(port, delay) {
-    logMessage('\n💧 mock-drop is running!');
+    logMessage(`\n${symbols.water} mock-drop is running!`);
     logInfo(`Watching ${this.jsonFilePath} for updates...`);
     if (delay > 0) {
       logInfo(`Response delay: ${delay}ms`);
@@ -56,7 +56,7 @@ class ServerManager {
     logMessage('\nEndpoints available:');
     const resourceNames = this.dataStore.getResourceNames();
     resourceNames.forEach(key => {
-      logMessage(`👉 http://localhost:${port}/${key} (GET, POST, PUT, DELETE)`);
+      logMessage(`${symbols.bullet} http://localhost:${port}/${key} (GET, POST, PUT, DELETE)`);
     });
     logMessage('\nPress Ctrl+C to stop.\n');
   }
@@ -73,27 +73,33 @@ class ServerManager {
 
   setupFileWatcher() {
     this.watcher = createFileWatcher(this.jsonFilePath, () => {
-      logMessage('\n🔄 File changed, reloading...');
+      logMessage(`\n${symbols.refresh} File changed, reloading...`);
       this.loadData(this.jsonFilePath);
       logSuccess('Server updated with new data\n');
     });
   }
 
   setupShutdownHandler() {
-    process.on('SIGINT', () => {
-      logMessage('\n\n👋 Shutting down mock-drop...');
+    const shutdown = () => {
+      logMessage(`\n\n${symbols.wave} Shutting down mock-drop...`);
       if (this.watcher) {
         this.watcher.close();
       }
       if (this.server) {
         this.server.close(() => {
-          logMessage('✨ Goodbye!');
+          logMessage(`${symbols.sparkle} Goodbye!`);
           process.exit(0);
         });
       } else {
         process.exit(0);
       }
-    });
+    };
+
+    // Handle SIGINT (Ctrl+C) - works on all platforms
+    process.on('SIGINT', shutdown);
+
+    // Handle SIGTERM - Unix/Linux/Mac only
+    process.on('SIGTERM', shutdown);
   }
 
   close() {

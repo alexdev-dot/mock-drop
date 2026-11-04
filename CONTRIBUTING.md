@@ -92,6 +92,38 @@ Enhancement suggestions are welcome! Please:
 - Node.js v18.0.0 or higher
 - npm v6.0.0 or higher
 
+### Cross-Platform Development
+
+mock-drop is designed to work seamlessly across Windows, Linux, and macOS. When contributing, keep these cross-platform considerations in mind:
+
+**Path Handling:**
+- Always use Node.js's `path` module for path operations
+- Use `path.join()` or `path.resolve()` instead of string concatenation
+- Never hardcode path separators (`/` or `\`) - use `path.sep` if needed
+- The codebase already uses `path.resolve()` in `json-loader.js` and `file-watcher.js`
+
+**Signal Handling:**
+- The tool handles both `SIGINT` (Ctrl+C) and `SIGTERM` signals
+- `SIGINT` works on all platforms
+- `SIGTERM` is primarily for Unix/Linux/macOS and is safely ignored on Windows
+- See `server-manager.js` for the implementation
+
+**File System Operations:**
+- Use Node.js's `fs` module which is cross-platform
+- File watcher uses `chokidar` which handles platform differences automatically
+- Executable permissions are set via a postinstall script (safe on Windows)
+
+**Terminal Emojis:**
+- The logger automatically detects terminal emoji support
+- Fallbacks to text symbols on terminals that don't support emojis
+- Windows Command Prompt uses text fallbacks by default
+- Windows Terminal and PowerShell may support emojis
+
+**Testing on Multiple Platforms:**
+- When possible, test your changes on multiple operating systems
+- At minimum, ensure code doesn't break on Windows (common pain point)
+- GitHub Actions CI tests on multiple platforms automatically
+
 ### Installation
 
 1. Clone the repository:
@@ -109,6 +141,18 @@ npm install
 ```bash
 npm link
 ```
+
+**Platform-Specific Notes:**
+
+**Windows:**
+- Works with CMD, PowerShell, and Git Bash
+- No additional setup required
+- Executable permissions are not needed on Windows
+
+**Linux/macOS:**
+- The postinstall script automatically sets executable permissions
+- If you encounter permission errors, manually run: `chmod +x bin/mock-drop.js`
+- On some systems, you may need to use `sudo npm link` if npm is configured globally
 
 ### Running Tests
 
@@ -222,6 +266,7 @@ npm run test:coverage
 - **API tests**: Use Supertest to test HTTP endpoints
 - **Coverage**: Maintain at least 70% code coverage
 - **Edge cases**: Test error conditions, empty inputs, null values
+- **Cross-platform**: Ensure tests pass on Windows, Linux, and macOS (verified via CI)
 
 ### Documentation
 

@@ -173,14 +173,33 @@ using (var client = new HttpClient())
 
 ---
 
+## Cross-Platform Compatibility
+
+mock-drop is designed to work seamlessly across all major operating systems:
+
+- **Windows**: Fully tested on Windows 10 and 11 (CMD, PowerShell, Git Bash)
+- **Linux**: Compatible with all major distributions (Ubuntu, Debian, Fedora, Arch, CentOS, etc.)
+- **macOS**: Supports both Intel and Apple Silicon (M1/M2/M3) Macs
+
+The tool uses Node.js's cross-platform path handling and signal management, ensuring consistent behavior regardless of your operating system.
+
+---
+
 ## Prerequisites
 
 - **Node.js** v18.0.0 or higher
 - **npm** v6.0.0 or higher
 
+mock-drop is fully cross-platform and works on:
+- Windows (10, 11)
+- Linux (all major distributions: Ubuntu, Debian, Fedora, Arch, etc.)
+- macOS (Intel and Apple Silicon)
+
 ---
 
 ## Installation
+
+### Global Installation (Recommended)
 
 Install globally via npm:
 
@@ -193,6 +212,33 @@ Verify the installation:
 ```bash
 mock-drop --version
 ```
+
+### Platform-Specific Notes
+
+#### Windows
+- Works with Command Prompt, PowerShell, and Git Bash
+- No additional setup required
+- Node.js installed via the official installer or nvm-windows works perfectly
+
+#### Linux
+- Works with bash, zsh, and other POSIX shells
+- If you encounter permission errors, try installing with sudo:
+  ```bash
+  sudo npm install -g @alex_developer/mock-drop
+  ```
+- Alternatively, configure npm to use a user directory to avoid sudo:
+  ```bash
+  mkdir -p ~/.npm-global
+  npm config set prefix ~/.npm-global
+  export PATH=~/.npm-global/bin:$PATH
+  npm install -g @alex_developer/mock-drop
+  ```
+
+#### macOS
+- Works with bash, zsh (default on modern macOS), and other shells
+- If using Homebrew's Node.js, installation works without sudo
+- For Apple Silicon (M1/M2/M3), ensure you're using a native ARM64 Node.js version
+- If you encounter permission errors, use the same Linux fix above
 
 ---
 
